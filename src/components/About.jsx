@@ -21,14 +21,14 @@ export default function About() {
       icon: <Award className="w-8 h-8 text-yellow-500 mb-3" />,
       title: "Experiencia",
       description:
-        "Más de 10 años diseñando proyectos residenciales, comerciales y urbanos con excelencia y profesionalismo.",
+        "Más de 30 años diseñando proyectos residenciales, comerciales y urbanos con excelencia y profesionalismo.",
     },
   ];
 
   return (
     <section
       id="about"
-      className="max-w-7xl mx-auto px-6 py-20 md:py-32 text-gray-800"
+      className="mx-auto px-6 py-20 md:py-32 text-gray-800 bg-gradient-to-b from-white-900 via-neutral-400 to-white-900"
     >
       <motion.div
         initial={{ opacity: 0, x: -40 }}
@@ -37,8 +37,10 @@ export default function About() {
         transition={{ duration: 0.8 }}
         className="max-w-3xl mx-auto text-center"
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Sobre Nosotros</h2>
-        <p className="text-lg leading-relaxed">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-neutral-700">
+          Sobre Nosotros
+        </h2>
+        <p className="text-lg leading-relaxed text-neutral-600">
           Somos un estudio de arquitectura apasionado por diseñar espacios que
           combinan funcionalidad y estética, creando ambientes que inspiran y
           perduran en el tiempo. Nuestra filosofía se basa en el detalle, la
@@ -53,17 +55,19 @@ export default function About() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, delay: i * 0.2 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             whileHover={{
               scale: 1.05,
               y: -5,
-              boxShadow: "0 8px 20px rgba(0,0,0,0.12)",
+              boxShadow: "0 8px 30px rgba(0,0,0,0.12)",
             }}
             className="rounded-lg p-6 shadow-md cursor-pointer select-none bg-white hover:shadow-lg"
           >
             {icon}
-            <h3 className="text-xl font-semibold mb-3 text-primary">{title}</h3>
-            <p className="text-gray-600">{description}</p>
+            <h3 className="text-xl font-semibold mb-3 text-neutral-700">
+              {title}
+            </h3>
+            <p className="text-neutral-600">{description}</p>
           </motion.div>
         ))}
       </div>

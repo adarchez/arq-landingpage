@@ -14,9 +14,9 @@ export default function Navbar() {
 
   const links = [
     { label: "Inicio", href: "#hero" },
+    { label: "Servicios", href: "#services" },
     { label: "Sobre Nosotros", href: "#about" },
     { label: "Proyectos", href: "#projects" },
-    { label: "Servicios", href: "#services" },
     { label: "Contacto", href: "#contact" },
   ];
 
@@ -25,14 +25,20 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <Image src="/logo.png" alt="Logo" width={36} height={36} />
+          <Image
+            src="/logo_nobkg.png"
+            alt="Logo"
+            width={50}
+            height={50}
+            className="lg:scale-250 md:scale-200 sm:scale-100 transition-transform duration-300 ease-in-out lg:hover:scale-300 md:hover:sclale-250 sm:hover:scale-150 pr-2"
+          />
           <motion.a
             href="#hero"
-            className="text-xl font-bold text-primary"
+            className="text-xl font-bold text-neutral-300 hover:text-neutral-100 transition [text-shadow:_1px_1px_2px_black] hover:[text-shadow:_2px_2px_2px_gray]"
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
           >
-            EstudioArq
+            Alejandra Videla
           </motion.a>
         </div>
 
@@ -44,13 +50,13 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="relative px-1 py-1 cursor-pointer text-white hover:text-black transition font-medium"
+                className="relative px-1 py-1 cursor-pointer text-neutral-200 hover:text-neutral-600 transition font-bold [text-shadow:_2px_2px_2px_black] hover:[text-shadow:_2px_2px_2px_white]"
               >
                 {link.label}
                 {isActive && (
                   <motion.span
                     layoutId="underline"
-                    className="absolute left-0 right-0 bottom-0 h-0.5 bg-white rounded shadow"
+                    className="absolute left-0 right-0 bottom-0 h-0.5 bg-neutral-600 rounded shadow"
                     transition={{ type: "spring", stiffness: 500, damping: 30 }}
                     layout
                   />

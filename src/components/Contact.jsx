@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
+import { Smartphone, Phone, Mail, MapPinHouse } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -65,7 +66,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 px-6 bg-gray-100">
+    <section id="contact" className="py-16 px-6 bg-neutral-200">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Formulario */}
         <div>
@@ -92,7 +93,7 @@ export default function Contact() {
                     rows="4"
                     value={formData[field]}
                     onChange={handleChange}
-                    className={`mt-1 block w-full rounded-md border px-3 py-2 shadow-sm focus:outline-none focus:ring-2 text-neutral-900 ${
+                    className={`mt-1 block w-full rounded-md border px-3 py-2 shadow-sm focus:outline-none focus:ring-2 bg-neutral-100 text-neutral-900 ${
                       errors[field]
                         ? "border-red-500 focus:ring-red-500"
                         : "border-gray-300 focus:ring-black"
@@ -107,7 +108,7 @@ export default function Contact() {
                     name={field}
                     value={formData[field]}
                     onChange={handleChange}
-                    className={`mt-1 block w-full rounded-md border px-3 py-2 shadow-sm focus:outline-none focus:ring-2 text-neutral-900 ${
+                    className={`mt-1 block w-full rounded-md border px-3 py-2 shadow-sm focus:outline-none focus:ring-2 bg-neutral-100 text-neutral-900 ${
                       errors[field]
                         ? "border-red-500 focus:ring-red-800"
                         : "border-gray-300 focus:ring-black"
@@ -156,16 +157,22 @@ export default function Contact() {
           className="flex flex-col justify-center space-y-6 text-gray-700"
         >
           <h3 className="text-2xl font-semibold">Información de contacto</h3>
-          <p>
-            <strong>Teléfono:</strong> +54 9 11 1234 5678
-          </p>
-          <p>
-            <strong>Email:</strong> contacto@estudioarq.com
-          </p>
-          <p>
-            <strong>Dirección:</strong> Alberti 607 Esq. Pueyrredón - Coronel
-            Brandsen, Buenos Aires
-          </p>
+          <div className="flex items-center space-x-2">
+            <Phone className="w-6 h-6 text-neutral-700" />
+            <p>+54 2223 445832</p>
+          </div>
+          <div className="flex items-center space-x-2">
+            <Smartphone className="w-6 h-6 text-neutral-700" />
+            <p>+54 9 2223 424664</p>
+          </div>
+          <div className="flex items-center space-x-2">
+            <Mail className="w-6 h-6 text-neutral-700" />
+            <p>malevidela@gmail.com</p>
+          </div>
+          <div className="flex items-center space-x-2">
+            <MapPinHouse className="w-6 h-6 text-neutral-700" />
+            <p>Alberti 607 Esq. Pueyrredón - Coronel Brandsen, Buenos Aires</p>
+          </div>
 
           {/* Mapa animado */}
           <motion.div

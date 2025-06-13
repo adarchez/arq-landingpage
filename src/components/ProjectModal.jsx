@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowLeft, ArrowRight } from "lucide-react";
@@ -16,6 +16,16 @@ export default function ProjectModal({ project, onClose }) {
     },
   });
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
   if (!project) return null;
 
   const goToSlide = (idx) => {
@@ -37,6 +47,7 @@ export default function ProjectModal({ project, onClose }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
+        onClick={onClose}
       >
         <motion.div
           className="bg-neutral-300 rounded-xl shadow-xl p-6 max-w-5xl w-full relative overflow-y-auto max-h-[95vh]"
@@ -44,6 +55,7 @@ export default function ProjectModal({ project, onClose }) {
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
           transition={{ duration: 0.3 }}
+          onClick={(e) => e.stopPropagation()}
         >
           {/* Cerrar */}
           <button
@@ -112,9 +124,11 @@ export default function ProjectModal({ project, onClose }) {
 
           {/* Info */}
           <div className="mt-6">
-            <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+            <h3 className="text-2xl font-bold mb-2 text-neutral-700">
+              {project.title}
+            </h3>
             <p className="text-sm text-gray-500 mb-4">{project.location}</p>
-            <p className="text-gray-700 leading-relaxed text-base">
+            <p className="text-neutral-600 leading-relaxed text-base">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
               fringilla euismod sem, a finibus lorem pharetra sed. Praesent in
               dignissim purus. Donec non lectus neque. Pellentesque ut nisi in

@@ -15,7 +15,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl md:text-6xl font-bold tracking-tight text-gray-100"
+          className="text-4xl md:text-6xl font-bold tracking-tight text-gray-100 [text-shadow:_1px_1px_2px_black]"
         >
           Diseño que trasciende el tiempo
         </motion.h1>
@@ -24,7 +24,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="mt-6 text-lg md:text-xl max-w-2xl text-gray-200"
+          className="mt-6 text-lg md:text-xl max-w-2xl text-gray-200 [text-shadow:_1px_1px_2px_black]"
         >
           Estudio de arquitectura enfocado en la funcionalidad, la estética y el
           detalle.

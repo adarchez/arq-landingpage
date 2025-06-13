@@ -26,6 +26,16 @@ const projects = [
     location: "Rosario, Santa Fe",
     images: ["/arq1.jpg", "/arq2.jpg", "/arq3.jpg"],
   },
+  {
+    title: "Residencia",
+    location: "La Plata, Buenos Aires",
+    images: ["/arq1.jpg", "/arq2.jpg", "/arq3.jpg"],
+  },
+  {
+    title: "Espacio Comercial",
+    location: "Brandsen, Buenos Aires",
+    images: ["/arq1.jpg", "/arq2.jpg", "/arq3.jpg"],
+  },
 ];
 
 export default function Projects() {
@@ -43,8 +53,10 @@ export default function Projects() {
         transition={{ duration: 0.8 }}
         className="text-center mb-16"
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Proyectos</h2>
-        <p className="text-lg max-w-2xl mx-auto text-gray-600">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-neutral-700">
+          Proyectos
+        </h2>
+        <p className="text-lg max-w-2xl mx-auto text-neutral-600">
           Una selección de obras que reflejan mi enfoque contemporáneo,
           funcional y sensible al entorno.
         </p>
@@ -69,9 +81,11 @@ export default function Projects() {
               height={400}
               className="w-full h-64 object-cover transform group-hover:scale-120 transition duration-400"
             />
-            <div className="absolute bottom-0 left-0 bg-neutral-600 right-0 bg-opacity-40 p-4 text-white">
-              <h3 className="text-lg font-semibold">{project.title}</h3>
-              <p className="text-sm">{project.location}</p>
+            <div className="absolute bottom-0 left-0 bg-white right-0 bg-opacity-40 p-4 text-neutral-700">
+              <h3 className="text-lg font-semibold text-neutral-700">
+                {project.title}
+              </h3>
+              <p className="text-sm text-neutral-600">{project.location}</p>
             </div>
           </motion.div>
         ))}
