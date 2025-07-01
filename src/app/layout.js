@@ -14,6 +14,14 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Alejandra Videla",
   description: "Estudio de arquitectura de Alejandra Videla.",
+  verification: {
+    google: (
+      <meta
+        name="google-site-verification"
+        content="KhWtmwkk5li2fl_xxtdM6sjIWrsMlG-lJLsqltid1r8"
+      />
+    ),
+  },
   metadataBase: new URL("https://alejandravidela.vercel.app"),
   openGraph: {
     title: "Alejandra Videla",

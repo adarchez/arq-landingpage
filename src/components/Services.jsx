@@ -46,7 +46,7 @@ export default function Services() {
           >
             <Image
               src="/services/serv1.jpg"
-              alt="1"
+              alt="Servicio que se ofrece"
               fill
               className="object-cover"
             />
@@ -70,7 +70,7 @@ export default function Services() {
           >
             <Image
               src="/services/serv2.jpg"
-              alt="2"
+              alt="Servicio que se ofrece"
               fill
               className="object-cover"
             />
@@ -94,7 +94,7 @@ export default function Services() {
           >
             <Image
               src="/services/serv3.jpg"
-              alt="3"
+              alt="Servicio que se ofrece"
               fill
               className="object-cover"
             />
@@ -118,7 +118,7 @@ export default function Services() {
           >
             <Image
               src="/services/serv4.jpg"
-              alt="4"
+              alt="Servicio que se ofrece"
               fill
               className="object-cover"
             />
