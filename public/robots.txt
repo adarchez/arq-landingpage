@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://alejandravidela.vercel.app
+
+# Sitemaps
+Sitemap: https://alejandravidela.vercel.app/sitemap.xml
